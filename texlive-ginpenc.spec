@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/ginpenc
+# catalog-date 2007-07-08 11:00:26 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-ginpenc
 Version:	1.0
 Release:	1
@@ -66,6 +72,7 @@ babel, e.g., "a instead, if the text is typeset in German.
 %doc %{_texmfdistdir}/source/latex/ginpenc/Makefile
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.dtx
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -76,3 +83,5 @@ babel, e.g., "a instead, if the text is typeset in German.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
