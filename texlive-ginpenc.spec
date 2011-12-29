@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 If the inputenc is used and German umlauts are input directly,
@@ -29,20 +26,12 @@ breaks the sort algorithm of makeindex, for instance. Ginpenc
 converts umlauts and the sharp-s to the short forms defined by
 babel, e.g., "a instead, if the text is typeset in German.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -73,7 +62,6 @@ babel, e.g., "a instead, if the text is typeset in German.
 %doc %{_texmfdistdir}/source/latex/ginpenc/Makefile
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.dtx
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -84,5 +72,3 @@ babel, e.g., "a instead, if the text is typeset in German.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
