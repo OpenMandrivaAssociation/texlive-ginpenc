@@ -1,4 +1,4 @@
-# revision 15878
+# revision 24980
 # category Package
 # catalog-ctan /macros/latex/contrib/ginpenc
 # catalog-date 2007-07-08 11:00:26 +0200
@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-ginpenc
 Version:	1.0
-Release:	2
+Release:	3
 Summary:	Modification of inputenc for German
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ginpenc
@@ -54,12 +54,13 @@ babel, e.g., "a instead, if the text is typeset in German.
 %{_texmfdistdir}/tex/latex/ginpenc/latin5.gie
 %{_texmfdistdir}/tex/latex/ginpenc/latin9.gie
 %{_texmfdistdir}/tex/latex/ginpenc/next.gie
+%doc %{_texmfdistdir}/doc/latex/ginpenc/ChangeLog
+%doc %{_texmfdistdir}/doc/latex/ginpenc/Makefile
 %doc %{_texmfdistdir}/doc/latex/ginpenc/README
 %doc %{_texmfdistdir}/doc/latex/ginpenc/ginpenc.pdf
 %doc %{_texmfdistdir}/doc/latex/ginpenc/news-message.txt
 %doc %{_texmfdistdir}/doc/latex/ginpenc/testginpenc.tex
 #- source
-%doc %{_texmfdistdir}/source/latex/ginpenc/Makefile
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.dtx
 %doc %{_texmfdistdir}/source/latex/ginpenc/ginpenc.ins
 
