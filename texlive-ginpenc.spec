@@ -1,6 +1,6 @@
 Name:		texlive-ginpenc
 Version:	24980
-Release:	1
+Release:	2
 Summary:	Modification of inputenc for German
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ginpenc
